@@ -21,3 +21,10 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+
+*.exe
+*.exe.~asm
+*.exe.debug
+*.exe.list
+*.exe.symbol
+*.exe_BKP*
