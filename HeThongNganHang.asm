@@ -9,11 +9,10 @@
     m2  db 13,10,'  |    ** HE THONG NGAN HANG ATM **     |$'
     m3  db 13,10,'  +=====================================+$'
     m4  db 13,10,'  |  [1]  Dang ky tai khoan             |$'
-    m5  db 13,10,'  |  [2]  Dang nhap                     |$'
-    m6  db 13,10,'  |  [3]  Doi mat khau                  |$'
-    m7  db 13,10,'  |  [4]  Thoat                         |$'
-    m8  db 13,10,'  +=====================================+$'
-    m9  db 13,10,'  >>  Chon chuc nang: $'
+    m5  db 13,10,'  |  [2]  Dang nhap                     |$'    
+    m6  db 13,10,'  |  [3]  Thoat                         |$'
+    m7  db 13,10,'  +=====================================+$'
+    m8  db 13,10,'  >>  Chon chuc nang: $'
 
     ; =========================================
     ;   MENU GIAO DICH (SAU DANG NHAP)
@@ -24,9 +23,11 @@
     b4  db 13,10,'  |  [1]  Kiem tra so du                |$'
     b5  db 13,10,'  |  [2]  Rut tien                      |$'
     b6  db 13,10,'  |  [3]  Gui tien                      |$'
-    b7  db 13,10,'  |  [4]  Dang xuat                     |$'
-    b8  db 13,10,'  +=====================================+$'
-    b9  db 13,10,'  >>  Chon giao dich: $'
+    b7  db 13,10,'  |  [4]  Chuyen Khoan                  |$'
+    b8  db 13,10,'  |  [5]  Doi mat khau                  |$'
+    b9  db 13,10,'  |  [6]  Dang xuat                     |$'
+    b10  db 13,10,'  +=====================================+$'
+    b11  db 13,10,'  >>  Chon giao dich: $'
 
     ; =========================================
     ;   BIEN LAI
@@ -322,9 +323,6 @@ HienThiMenuChinh proc
     lea dx, m8
     mov ah, 9
     int 21h
-    lea dx, m9
-    mov ah, 9
-    int 21h
     ret
 HienThiMenuChinh endp
 
@@ -360,6 +358,12 @@ HienThiMenuGD proc
     lea dx, b9
     mov ah, 9
     int 21h
+    lea dx, b10
+    mov ah, 9
+    int 21h
+    lea dx, b11
+    mov ah, 9
+    int 21h
     ret
 HienThiMenuGD endp
 
@@ -380,8 +384,6 @@ MenuChinh:
     cmp al, '2'
     je  DangNhap
     cmp al, '3'
-    je  DoiMatKhau
-    cmp al, '4'
     je  Thoat
     jmp MenuChinh
 
@@ -396,7 +398,14 @@ MenuGiaoDich:
     je  RutTien
     cmp al, '3'
     je  GuiTien
-    cmp al, '4'
+    
+    ;------------------------Chuyen Khoan-------------------
+    ;cmp al, '4'
+    ;je ChuyenKhoan
+    
+    cmp al, '5'
+    je  DoiMatKhau
+    cmp al, '6'
     je  DangXuat
     jmp MenuGiaoDich
 
@@ -485,6 +494,12 @@ SaiTK:
     int 21h
     call ChoNhan
     jmp MenuChinh
+SaiTK1:
+    lea dx, saiThongTin
+    mov ah, 9
+    int 21h
+    call ChoNhan
+    jmp MenuGiaoDich
 
 ChuaCoTK:
     call XoaManHinh
@@ -519,7 +534,7 @@ DoiMatKhau:
     lea di, inputPass
     call SoSanh
     cmp al, 1
-    jne SaiTK
+    jne SaiTK1
 
     lea dx, tbNewPass
     mov ah, 9
@@ -535,7 +550,7 @@ DoiMatKhau:
     mov ah, 9
     int 21h
     call ChoNhan
-    jmp MenuChinh
+    jmp MenuGiaoDich
 
 ; =============================================
 ;  DANG XUAT
