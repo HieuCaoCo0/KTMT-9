@@ -3,110 +3,120 @@
 .data
 
     ; =========================================
-    ;   MENU CHINH (CHUA DANG NHAP)
+    ;   MENU KHOI DAU (CHUA DANG NHAP)
     ; =========================================
-    m1  db 13,10,'  +=====================================+$'
-    m2  db 13,10,'  |    ** HE THONG NGAN HANG ATM **     |$'
-    m3  db 13,10,'  +=====================================+$'
-    m4  db 13,10,'  |  [1]  Dang ky tai khoan             |$'
-    m5  db 13,10,'  |  [2]  Dang nhap                     |$'
-    m6  db 13,10,'  |  [3]  Thoat                         |$'
-    m7  db 13,10,'  +=====================================+$'
-    m8  db 13,10,'  >>  Chon chuc nang: $'
+    menuKD1  db 13,10,'  +=====================================+$'
+    menuKD2  db 13,10,'  |    ** HE THONG NGAN HANG ATM **     |$'
+    menuKD3  db 13,10,'  |          (Nhom 9 - PTIT)            |$'
+    menuKD4  db 13,10,'  +=====================================+$'
+    menuKD5  db 13,10,'  |  [1]  Dang ky tai khoan             |$'
+    menuKD6  db 13,10,'  |  [2]  Dang nhap                     |$'
+    menuKD7  db 13,10,'  |  [3]  Thoat                         |$'
+    menuKD8  db 13,10,'  +=====================================+$'
+    menuKD9  db 13,10,'  >>  Chon chuc nang: $'
 
     ; =========================================
     ;   MENU GIAO DICH (SAU DANG NHAP)
     ; =========================================
-    b1  db 13,10,'  +=====================================+$'
-    b2  db 13,10,'  |      ** MENU GIAO DICH ATM **       |$'
-    b3  db 13,10,'  +=====================================+$'
-    b4  db 13,10,'  |  [1]  Kiem tra so du                |$'
-    b5  db 13,10,'  |  [2]  Rut tien                      |$'
-    b6  db 13,10,'  |  [3]  Gui tien                      |$'
-    b7  db 13,10,'  |  [4]  Chuyen Khoan                  |$'
-    b8  db 13,10,'  |  [5]  Doi mat khau                  |$'
-    b9  db 13,10,'  |  [6]  Dang xuat                     |$'
-    b10 db 13,10,'  +=====================================+$'
-    b11 db 13,10,'  >>  Chon giao dich: $'
+    menuGD1  db 13,10,'  +=====================================+$'
+    menuGD2  db 13,10,'  |      ** MENU GIAO DICH ATM **       |$'
+    menuGD3  db 13,10,'  +=====================================+$'
+    menuGD4  db 13,10,'  |  [1]  Kiem tra so du                |$'
+    menuGD5  db 13,10,'  |  [2]  Rut tien                      |$'
+    menuGD6  db 13,10,'  |  [3]  Gui tien                      |$'
+    menuGD7  db 13,10,'  |  [4]  Chuyen Khoan                  |$'
+    menuGD8  db 13,10,'  |  [5]  Doi mat khau                  |$'
+    menuGD9  db 13,10,'  |  [6]  Dang xuat                     |$'
+    menuGD10 db 13,10,'  +=====================================+$'
+    menuGD11 db 13,10,'  >>  Chon giao dich: $'
 
     ; =========================================
-    ;   BIEN LAI
+    ;   BIEN LAI GIAO DICH
     ; =========================================
-    r1  db 13,10,'  +-------------------------------------+$'
-    r2  db 13,10,'  |         BIEN LAI GIAO DICH          |$'
-    r3  db 13,10,'  +-------------------------------------+$'
-    r4G db 13,10,'  |  Loai GD  : GUI TIEN                |$'
-    r4R db 13,10,'  |  Loai GD  : RUT TIEN                |$'
-    r4S db 13,10,'  |  Loai GD  : KIEM TRA SO DU          |$'
-    r4C db 13,10,'  |  Loai GD  : CHUYEN KHOAN            |$'
-    r5  db 13,10,'  |  So tien  : $'
-    r6  db 13,10,'  |  So du CL : $'
-    r7  db 13,10,'  +-------------------------------------+$'
-    r8  db 13,10,'  |      Cam on quy khach!              |$'
-    r9  db 13,10,'  +-------------------------------------+$'
-    rTo db 13,10,'  |  Chuyen den: $'
+    bienLai1        db 13,10,'  +-------------------------------------+$'
+    bienLai2        db 13,10,'  |         BIEN LAI GIAO DICH          |$'
+    bienLai3        db 13,10,'  +-------------------------------------+$'
+    bienLaiGui      db 13,10,'  |  Loai GD  : GUI TIEN                |$'
+    bienLaiRut      db 13,10,'  |  Loai GD  : RUT TIEN                |$'
+    bienLaiKiemTra  db 13,10,'  |  Loai GD  : KIEM TRA SO DU          |$'
+    bienLaiChuyen   db 13,10,'  |  Loai GD  : CHUYEN KHOAN            |$'
+    bienLai5        db 13,10,'  |  So tien  : $'
+    bienLai6        db 13,10,'  |  So du CL : $'
+    bienLai7        db 13,10,'  +-------------------------------------+$'
+    bienLai8        db 13,10,'  |      Cam on quy khach!              |$'
+    bienLai9        db 13,10,'  +-------------------------------------+$'
+    bienLaiChuyenDen db 13,10,'  |  Chuyen den: $'
 
     ; =========================================
     ;   THONG BAO NHAP LIEU
     ; =========================================
-    tbUser      db 13,10,'  >> Username        : $'
-    tbPass      db 13,10,'  >> Password        : $'
-    tbNewPass   db 13,10,'  >> Password moi    : $'
-    tbNhapSo    db 13,10,'  >> So tien (x1000 VND): $'
-    tbSoDu      db 13,10,'  |  So du hien tai  : $'
-    tbDonVi     db ' (x1000 VND)$'
-    tbDesToUser db 13,10,'  >> Username nguoi nhan: $'
-    pressContinue db 13,10,13,10,'  [ Nhan phim bat ky de tiep tuc... ]$'
+    tb_nhapTenUser   db 13,10,'  >> Username          : $'
+    tb_nhapMatKhau   db 13,10,'  >> Password          : $'
+    tb_nhapPassMoi   db 13,10,'  >> Password moi      : $'
+    tb_nhapSoTien    db 13,10,'  >> So tien (x1000 VND): $'
+    tb_soDuHienTai   db 13,10,'  |  So du hien tai    : $'
+    tb_donVi         db ' (x1000 VND)$'
+    tb_nhapUserNhan  db 13,10,'  >> Username nguoi nhan: $'
+    tb_nhanPhim      db 13,10,13,10,'  [ Nhan phim bat ky de tiep tuc... ]$'
+    tb_gioiHan       db 13,10,'  [Luu y] So du toi da: 65535 (x1000 VND) ~ 65.5 trieu VND$'
 
     ; =========================================
     ;   THONG BAO KET QUA
     ; =========================================
-    dkThanhCong  db 13,10,'  [OK] Dang ky thanh cong!$'
-    dnThanhCong  db 13,10,'  [OK] Dang nhap thanh cong!$'
-    dxThanhCong  db 13,10,'  [OK] Da dang xuat.$'
-    doiOK        db 13,10,'  [OK] Doi mat khau thanh cong!$'
-    tbRutOK      db 13,10,'  [OK] Rut tien thanh cong!$'
-    tbGuiOK      db 13,10,'  [OK] Gui tien thanh cong!$'
-    tbCKOK       db 13,10,'  [OK] Chuyen khoan thanh cong!$'
-    saiThongTin  db 13,10,'  [!!] Sai username hoac password!$'
-    chuaDK       db 13,10,'  [!!] Chua co tai khoan! Hay dang ky truoc.$'
-    tbKhongDu    db 13,10,'  [!!] So du khong du!$'
-    tbSoKhongHop db 13,10,'  [!!] So tien khong hop le (phai > 0)!$'
-    tbDayTK      db 13,10,'  [!!] He thong da day (toi da 5 tai khoan)!$'
-    tbTrungTen   db 13,10,'  [!!] Username da ton tai!$'
-    tbKhongTimTK db 13,10,'  [!!] Khong tim thay tai khoan nguoi nhan!$'
-    tbCKChinhMinh db 13,10,'  [!!] Khong the chuyen khoan cho chinh minh!$'
-    tbDanhSachTK  db 13,10,'  Danh sach tai khoan hien co:$'
-    tbMuiTen      db 13,10,'    -> $'
+    tb_dangKyOK      db 13,10,'  [OK] Dang ky thanh cong!$'
+    tb_dangNhapOK    db 13,10,'  [OK] Dang nhap thanh cong!$'
+    tb_dangXuatOK    db 13,10,'  [OK] Da dang xuat.$'
+    tb_doiPassOK     db 13,10,'  [OK] Doi mat khau thanh cong!$'
+    tb_rutOK         db 13,10,'  [OK] Rut tien thanh cong!$'
+    tb_guiOK         db 13,10,'  [OK] Gui tien thanh cong!$'
+    tb_chuyenKhoanOK db 13,10,'  [OK] Chuyen khoan thanh cong!$'
+    tb_saiThongTin   db 13,10,'  [!!] Sai username hoac password!$'
+    tb_saiPassCu     db 13,10,'  [!!] Mat khau cu khong chinh xac!$'
+    tb_chuaDangKy    db 13,10,'  [!!] Chua co tai khoan! Hay dang ky truoc.$'
+    tb_khongDuTien   db 13,10,'  [!!] So du khong du!$'
+    tb_soTienSai     db 13,10,'  [!!] So tien khong hop le!$'
+    tb_heDayTK       db 13,10,'  [!!] He thong da day (toi da 20 tai khoan)!$'
+    tb_trungTenUser  db 13,10,'  [!!] Username da ton tai!$'
+    tb_khongTimThayTK db 13,10,'  [!!] Khong tim thay tai khoan nguoi nhan!$'
+    tb_chuyenChinhMinh db 13,10,'  [!!] Khong the chuyen khoan cho chinh minh!$'
+    tb_nhapRong      db 13,10,'  [!!] Khong duoc de trong thong tin!$'
+    tb_danhSachTK    db 13,10,'  Danh sach tai khoan hien co:$'
+    tb_muiTen        db 13,10,'    -> $'
+    tb_tranSo        db 13,10,'  [!!] Giao dich that bai! Tong so du se vuot qua muc 65535.$'
 
     ; =========================================
-    ;   DU LIEU TAI KHOAN NHIEU TAI KHOAN
-    ;   Toi da MAX_TK tai khoan
-    ;   Moi tai khoan: username (20 byte) + password (20 byte) + soDu (2 byte word)
+    ;   THONG BAO THOAT
     ; =========================================
-    MAX_TK       equ 5
-    RECORD_SIZE  equ 42        ; 20 + 20 + 2 = 42 bytes moi tai khoan
+    tb_tamBiet       db 13,10,'  +=====================================+'
+                     db 13,10,'  |     Cam on da su dung dich vu!      |'
+                     db 13,10,'  |       Nhom 9 - PTIT - 2025          |'
+                     db 13,10,'  +=====================================+',13,10,'$'
 
-    ; Mang luu tru: moi record = [username 20B][password 20B][soDu 2B]
-    tkUsername   db MAX_TK * 20 dup('$')
-    tkPassword   db MAX_TK * 20 dup('$')
-    tkSoDu       dw MAX_TK dup(0)
+    ; =========================================
+    ;   DATABASE TAI KHOAN (toi da 20 tai khoan)
+    ; =========================================
+    SO_TK_TOI_DA    equ 20
 
-    soLuongTK    db 0          ; so tai khoan da dang ky
-    currentTK    db 0          ; chi so tai khoan dang dang nhap (0-based)
-    daDangNhap   db 0
+    mangTenUser     db SO_TK_TOI_DA * 20 dup('$')  ; Mang username
+    mangMatKhau     db SO_TK_TOI_DA * 20 dup('$')  ; Mang password
+    mangSoDu        dw SO_TK_TOI_DA dup(0)          ; Mang so du (x1000 VND)
 
-    ; Buffer tam thoi
-    inputUser    db 20 dup('$')
-    inputPass    db 20 dup('$')
-    newPass      db 20 dup('$')
-    inputSo      db 10 dup('$')
-    destUser     db 20 dup('$')
+    soLuongTK       db 0    ; So tai khoan hien co
+    tkHienTai       db 0    ; Chi so tai khoan dang dang nhap
+
+    ; =========================================
+    ;   BUFFER NHAP LIEU TAM THOI
+    ; =========================================
+    nhapTenUser     db 20 dup('$')  ; Buffer nhap username
+    nhapMatKhau     db 20 dup('$')  ; Buffer nhap password
+    matKhauMoi      db 20 dup('$')  ; Buffer nhap password moi
+    nhapSoTien      db 10 dup('$')  ; Buffer nhap so tien
+    tenUserNhan     db 20 dup('$')  ; Buffer nhap username nguoi nhan
 
 .code
 
 ; =============================================
-;  XOA MAN HINH (INT 10h)
+;  XOA MAN HINH
 ; =============================================
 XoaManHinh proc
     mov ah, 06h
@@ -126,7 +136,7 @@ XoaManHinh endp
 ;  CHO NHAN PHIM BAT KY
 ; =============================================
 ChoNhan proc
-    lea dx, pressContinue
+    lea dx, tb_nhanPhim
     mov ah, 9
     int 21h
     mov ah, 1
@@ -135,16 +145,16 @@ ChoNhan proc
 ChoNhan endp
 
 ; =============================================
-;  LAM SACH BUFFER (DI = buffer, CX = size)
+;  LAM SACH BUFFER (DI = buffer, CX = kich thuoc)
 ; =============================================
 LamSachBuffer proc
     push ax
     push cx
     push di
-LSB_Loop:
+LSB_Lap:
     mov byte ptr [di], '$'
     inc di
-    loop LSB_Loop
+    loop LSB_Lap
     pop di
     pop cx
     pop ax
@@ -152,7 +162,8 @@ LSB_Loop:
 LamSachBuffer endp
 
 ; =============================================
-;  NHAP CHUOI (SI = buffer dich)
+;  NHAP CHUOI CO GIOI HAN DO DAI 
+;  Vao: SI = buffer dich, CX = so ky tu toi da, ket thuc bang Enter
 ; =============================================
 NhapChuoi proc
 NC_Nhap:
@@ -160,11 +171,14 @@ NC_Nhap:
     int 21h
     cmp al, 13
     je  NC_Xong
+    cmp cx, 0
+    je  NC_Nhap       ; Neu da day buffer thi bo qua, chi doc nhung khong luu (chong tran)
     mov [si], al
     inc si
+    dec cx
     jmp NC_Nhap
 NC_Xong:
-    mov [si], '$'
+    mov byte ptr [si], '$'
     ret
 NhapChuoi endp
 
@@ -172,8 +186,8 @@ NhapChuoi endp
 ;  SO SANH CHUOI: SI vs DI
 ;  Ket qua: AL=1 bang nhau, AL=0 khac nhau
 ; =============================================
-SoSanh proc
-    push bx             ; bao ton BX (BL dung lam counter o noi goi)
+SoSanhChuoi proc
+    push bx
 SS_Lap:
     mov al, [si]
     mov bl, [di]
@@ -192,36 +206,36 @@ SS_Khac:
     pop bx
     mov al, 0
     ret
-SoSanh endp
+SoSanhChuoi endp
 
 ; =============================================
 ;  COPY CHUOI: SI -> DI (ket thuc bang '$')
 ; =============================================
 CopyChuoi proc
-CC_Loop:
+CC_Lap:
     mov al, [si]
     mov [di], al
     cmp al, '$'
-    je  CC_Done
+    je  CC_Xong
     inc si
     inc di
-    jmp CC_Loop
-CC_Done:
+    jmp CC_Lap
+CC_Xong:
     ret
 CopyChuoi endp
 
 ; =============================================
-;  CHUOI -> SO NGUYEN
-;  Vao: SI tro toi chuoi (ket thuc bang '$')
-;  Ra:  AX = gia tri so
-;       CF = 0: hop le, CF = 1: loi
+;  CHUOI -> SO NGUYEN 16-BIT
+;  Vao: SI = chuoi (ket thuc '$')
+;  Ra:  AX = so, CF=0 hop le / CF=1 loi
 ; =============================================
 ChuoiToSo proc
     push bx
     push cx
+    push dx         
     xor ax, ax
     xor cx, cx
-CTS_Loop:
+CTS_Lap:
     mov bl, [si]
     cmp bl, '$'
     je  CTS_KiemTra
@@ -229,31 +243,46 @@ CTS_Loop:
     jb  CTS_Loi
     cmp bl, '9'
     ja  CTS_Loi
+    
     sub bl, '0'
-    push bx
+    push bx         
+
     mov bx, 10
-    mul bx
-    pop bx
+    mul bx          
+    cmp dx, 0       
+    jne CTS_Loi_Pop 
+    
+    pop bx          
     xor bh, bh
-    add ax, bx
+    add ax, bx      
+    jc  CTS_Loi     
+    
     inc si
     inc cx
-    jmp CTS_Loop
+    jmp CTS_Lap
+    
+CTS_Loi_Pop:
+    pop bx
+    jmp CTS_Loi
+
 CTS_KiemTra:
     cmp cx, 0
     je  CTS_Loi
-    clc
+    clc             
     jmp CTS_Xong
+    
 CTS_Loi:
-    stc
+    stc             
+    
 CTS_Xong:
+    pop dx
     pop cx
     pop bx
     ret
 ChuoiToSo endp
 
 ; =============================================
-;  IN SO NGUYEN AX RA MAN HINH
+;  IN SO NGUYEN 16-BIT (AX = so can in)
 ; =============================================
 InSo proc
     push ax
@@ -267,7 +296,7 @@ InSo proc
     mov dl, '0'
     mov ah, 2
     int 21h
-    jmp IS_Done
+    jmp IS_Xong
 IS_Chia:
     xor dx, dx
     div bx
@@ -281,7 +310,7 @@ IS_In:
     mov ah, 2
     int 21h
     loop IS_In
-IS_Done:
+IS_Xong:
     pop dx
     pop cx
     pop bx
@@ -296,15 +325,15 @@ InChuoi proc
     push ax
     push dx
     push si
-IC_Loop:
+IC_Lap:
     mov dl, [si]
     cmp dl, '$'
-    je  IC_Done
+    je  IC_Xong
     mov ah, 2
     int 21h
     inc si
-    jmp IC_Loop
-IC_Done:
+    jmp IC_Lap
+IC_Xong:
     pop si
     pop dx
     pop ax
@@ -312,72 +341,64 @@ IC_Done:
 InChuoi endp
 
 ; =============================================
-;  LAY DIA CHI USERNAME CUA TAI KHOAN thu BX (0-based)
-;  Ra: SI = dia chi username[BX]
+;  LAY DIA CHI TEN USER TAI KHOAN thu BX
+;  Ra: SI = dia chi mangTenUser[BX * 20]
 ; =============================================
-LayAddrUsername proc
+LayDiaChiTenUser proc
     push ax
     push dx
     mov ax, bx
     mov dx, 20
     mul dx
-    lea si, tkUsername
+    lea si, mangTenUser
     add si, ax
     pop dx
     pop ax
     ret
-LayAddrUsername endp
+LayDiaChiTenUser endp
 
 ; =============================================
-;  LAY DIA CHI PASSWORD CUA TAI KHOAN thu BX (0-based)
-;  Ra: DI = dia chi password[BX]
+;  LAY DIA CHI MAT KHAU TAI KHOAN thu BX
+;  Ra: DI = dia chi mangMatKhau[BX * 20]
 ; =============================================
-LayAddrPassword proc
+LayDiaChiMatKhau proc
     push ax
     push dx
     mov ax, bx
     mov dx, 20
     mul dx
-    lea di, tkPassword
+    lea di, mangMatKhau
     add di, ax
     pop dx
     pop ax
     ret
-LayAddrPassword endp
+LayDiaChiMatKhau endp
 
 ; =============================================
-;  TIM TAI KHOAN THEO USERNAME (SI = chuoi can tim)
-;  Ra: BX = chi so tim thay, CF=0
-;      CF=1 neu khong tim thay
-; =============================================
-; =============================================
-;  TIM TAI KHOAN THEO USERNAME
-;  Vao: SI = dia chi chuoi username can tim
-;  Ra:  BX = chi so tim thay, CF=0 neu thay
+;  TIM TAI KHOAN THEO TEN USER
+;  Vao: SI = chuoi ten user can tim
+;  Ra:  BX = chi chi tim thay, CF=0 neu thay
 ;       CF=1 neu khong tim thay
 ; =============================================
 TimTaiKhoan proc
     push ax
     push cx
     push di
-    ; luu dia chi chuoi can tim vao DI
-    mov di, si
+    mov di, si          
     xor bx, bx
     xor cx, cx
     mov cl, soLuongTK
-TTK_Loop:
+TTK_Lap:
     cmp bx, cx
     jge TTK_KhongThay
-    ; SI = &tkUsername[BX]
-    call LayAddrUsername
-    ; So sanh: SI=tkUsername[BX], DI=chuoi can tim
+    call LayDiaChiTenUser   
     push di
-    call SoSanh
+    call SoSanhChuoi
     pop di
     cmp al, 1
     je  TTK_Thay
     inc bx
-    jmp TTK_Loop
+    jmp TTK_Lap
 TTK_Thay:
     pop di
     pop cx
@@ -393,114 +414,113 @@ TTK_KhongThay:
 TimTaiKhoan endp
 
 ; =============================================
-;  IN DONG CUOI BIEN LAI (so du con lai)
+;  IN SO DU CON LAI TRONG BIEN LAI
 ; =============================================
-InBienLaiSoDu proc
+InSoDuBienLai proc
     push ax
     push bx
     push si
-    lea dx, r6
+    lea dx, bienLai6
     mov ah, 9
     int 21h
-    ; lay sodu cua tai khoan hien tai
     xor bh, bh
-    mov bl, currentTK
-    ; tkSoDu[BX] = tkSoDu + BX*2
-    push bx
+    mov bl, tkHienTai
     shl bx, 1
-    mov ax, tkSoDu[bx]
-    pop bx
+    mov ax, mangSoDu[bx]
     call InSo
-    lea dx, tbDonVi
+    lea dx, tb_donVi
     mov ah, 9
     int 21h
-    lea dx, r7
+    lea dx, bienLai7
     mov ah, 9
     int 21h
-    lea dx, r8
+    lea dx, bienLai8
     mov ah, 9
     int 21h
-    lea dx, r9
+    lea dx, bienLai9
     mov ah, 9
     int 21h
     pop si
     pop bx
     pop ax
     ret
-InBienLaiSoDu endp
+InSoDuBienLai endp
 
 ; =============================================
-;  HIEN THI MENU CHINH
+;  HIEN THI MENU KHOI DAU
 ; =============================================
-HienThiMenuChinh proc
+HienThiMenuKhoiDau proc
     call XoaManHinh
-    lea dx, m1
+    lea dx, menuKD1
     mov ah, 9
     int 21h
-    lea dx, m2
+    lea dx, menuKD2
     mov ah, 9
     int 21h
-    lea dx, m3
+    lea dx, menuKD3
     mov ah, 9
     int 21h
-    lea dx, m4
+    lea dx, menuKD4
     mov ah, 9
     int 21h
-    lea dx, m5
+    lea dx, menuKD5
     mov ah, 9
     int 21h
-    lea dx, m6
+    lea dx, menuKD6
     mov ah, 9
     int 21h
-    lea dx, m7
+    lea dx, menuKD7
     mov ah, 9
     int 21h
-    lea dx, m8
+    lea dx, menuKD8
+    mov ah, 9
+    int 21h
+    lea dx, menuKD9
     mov ah, 9
     int 21h
     ret
-HienThiMenuChinh endp
+HienThiMenuKhoiDau endp
 
 ; =============================================
 ;  HIEN THI MENU GIAO DICH
 ; =============================================
-HienThiMenuGD proc
+HienThiMenuGiaoDich proc
     call XoaManHinh
-    lea dx, b1
+    lea dx, menuGD1
     mov ah, 9
     int 21h
-    lea dx, b2
+    lea dx, menuGD2
     mov ah, 9
     int 21h
-    lea dx, b3
+    lea dx, menuGD3
     mov ah, 9
     int 21h
-    lea dx, b4
+    lea dx, menuGD4
     mov ah, 9
     int 21h
-    lea dx, b5
+    lea dx, menuGD5
     mov ah, 9
     int 21h
-    lea dx, b6
+    lea dx, menuGD6
     mov ah, 9
     int 21h
-    lea dx, b7
+    lea dx, menuGD7
     mov ah, 9
     int 21h
-    lea dx, b8
+    lea dx, menuGD8
     mov ah, 9
     int 21h
-    lea dx, b9
+    lea dx, menuGD9
     mov ah, 9
     int 21h
-    lea dx, b10
+    lea dx, menuGD10
     mov ah, 9
     int 21h
-    lea dx, b11
+    lea dx, menuGD11
     mov ah, 9
     int 21h
     ret
-HienThiMenuGD endp
+HienThiMenuGiaoDich endp
 
 ; =============================================
 ;  MAIN
@@ -509,9 +529,9 @@ main proc
     mov ax, @data
     mov ds, ax
 
-; ---- MENU CHINH ----
-MenuChinh:
-    call HienThiMenuChinh
+; ---- VONG LAP MENU KHOI DAU ----
+MenuKhoiDau:
+    call HienThiMenuKhoiDau
     mov ah, 1
     int 21h
     cmp al, '1'
@@ -520,11 +540,11 @@ MenuChinh:
     je  DangNhap
     cmp al, '3'
     je  Thoat
-    jmp MenuChinh
+    jmp MenuKhoiDau
 
-; ---- MENU GIAO DICH ----
+; ---- VONG LAP MENU GIAO DICH ----
 MenuGiaoDich:
-    call HienThiMenuGD
+    call HienThiMenuGiaoDich
     mov ah, 1
     int 21h
     cmp al, '1'
@@ -542,92 +562,107 @@ MenuGiaoDich:
     jmp MenuGiaoDich
 
 ; =============================================
-;  DANG KY
+;  DANG KY TAI KHOAN MOI
 ; =============================================
 DangKy:
     ; Kiem tra da day chua
     xor ah, ah
     mov al, soLuongTK
-    cmp al, MAX_TK
-    jge DK_Day
+    cmp al, SO_TK_TOI_DA
+    jge DangKy_Day
 
     call XoaManHinh
 
     ; Lam sach buffer nhap
-    lea di, inputUser
+    lea di, nhapTenUser
     mov cx, 20
     call LamSachBuffer
-    lea di, inputPass
+    lea di, nhapMatKhau
     mov cx, 20
     call LamSachBuffer
 
     ; Nhap username
-    lea dx, tbUser
+    lea dx, tb_nhapTenUser
     mov ah, 9
     int 21h
-    lea si, inputUser
+    lea si, nhapTenUser
+    mov cx, 19
     call NhapChuoi
+
+    ; Kiem tra rong username
+    lea si, nhapTenUser
+    cmp byte ptr [si], '$'
+    je  DangKy_Rong
 
     ; Kiem tra username da ton tai chua
-    lea si, inputUser
+    lea si, nhapTenUser
     call TimTaiKhoan
-    jnc DK_TrungTen         ; CF=0 tuc la tim thay -> trung ten
+    jnc DangKy_TrungTen     
 
     ; Nhap password
-    lea dx, tbPass
+    lea dx, tb_nhapMatKhau
     mov ah, 9
     int 21h
-    lea si, inputPass
+    lea si, nhapMatKhau
+    mov cx, 19
     call NhapChuoi
 
-    ; Luu vao mang tai khoan
-    ; chi so moi = soLuongTK
+    ; Kiem tra rong password
+    lea si, nhapMatKhau
+    cmp byte ptr [si], '$'
+    je  DangKy_Rong
+
+    ; Luu username vao mangTenUser[soLuongTK]
     xor bh, bh
     mov bl, soLuongTK
-
-    ; Copy username vao tkUsername[BL]
-    call LayAddrUsername    ; SI = &tkUsername[BL]
-    lea di, inputUser
-    ; doi cho: can copy inputUser -> SI
-    ; dung CopyChuoi: SI->DI, ta can inputUser->tkUsername[BL]
-    ; tuc: nguon = inputUser (SI), dich = tkUsername[BL] (DI)
-    ; nhung LayAddrUsername dat vao SI, ta can dat vao DI
+    call LayDiaChiTenUser   
     mov di, si
-    lea si, inputUser
+    lea si, nhapTenUser
     call CopyChuoi
 
-    ; Copy password vao tkPassword[BL]
-    call LayAddrPassword    ; DI = &tkPassword[BL]
-    lea si, inputPass
+    ; Luu password vao mangMatKhau[soLuongTK]
+    xor bh, bh
+    mov bl, soLuongTK
+    call LayDiaChiMatKhau   
+    lea si, nhapMatKhau
     call CopyChuoi
 
-    ; Dat so du = 0
+    ; Dat so du ban dau = 0
+    xor bh, bh
+    mov bl, soLuongTK
     shl bx, 1
-    mov tkSoDu[bx], 0
+    mov mangSoDu[bx], 0
 
     ; Tang so luong tai khoan
     inc soLuongTK
 
-    lea dx, dkThanhCong
+    lea dx, tb_dangKyOK
     mov ah, 9
     int 21h
     call ChoNhan
-    jmp MenuChinh
+    jmp MenuKhoiDau
 
-DK_Day:
+DangKy_Rong:
+    lea dx, tb_nhapRong
+    mov ah, 9
+    int 21h
+    call ChoNhan
+    jmp MenuKhoiDau
+
+DangKy_Day:
     call XoaManHinh
-    lea dx, tbDayTK
+    lea dx, tb_heDayTK
     mov ah, 9
     int 21h
     call ChoNhan
-    jmp MenuChinh
+    jmp MenuKhoiDau
 
-DK_TrungTen:
-    lea dx, tbTrungTen
+DangKy_TrungTen:
+    lea dx, tb_trungTenUser
     mov ah, 9
     int 21h
     call ChoNhan
-    jmp MenuChinh
+    jmp MenuKhoiDau
 
 ; =============================================
 ;  DANG NHAP
@@ -636,116 +671,133 @@ DangNhap:
     xor ah, ah
     mov al, soLuongTK
     cmp al, 0
-    je  ChuaCoTK
+    je  DangNhap_ChuaCoTK
 
     call XoaManHinh
-    lea di, inputUser
+    lea di, nhapTenUser
     mov cx, 20
     call LamSachBuffer
-    lea di, inputPass
+    lea di, nhapMatKhau
     mov cx, 20
     call LamSachBuffer
 
-    lea dx, tbUser
+    ; Nhap username
+    lea dx, tb_nhapTenUser
     mov ah, 9
     int 21h
-    lea si, inputUser
+    lea si, nhapTenUser
+    mov cx, 19
     call NhapChuoi
 
-    lea dx, tbPass
+    ; Nhap password
+    lea dx, tb_nhapMatKhau
     mov ah, 9
     int 21h
-    lea si, inputPass
+    lea si, nhapMatKhau
+    mov cx, 19
     call NhapChuoi
 
     ; Tim tai khoan theo username
-    lea si, inputUser
+    lea si, nhapTenUser
     call TimTaiKhoan
-    jc  SaiTK               ; Khong tim thay
+    jc  DangNhap_SaiThongTin    
 
     ; BX = chi so tai khoan, kiem tra password
-    ; So sanh inputPass vs tkPassword[BX]
     push bx
-    call LayAddrPassword    ; DI = &tkPassword[BX]
-    lea si, inputPass
-    ; SoSanh: SI=inputPass, DI=tkPassword[BX]
-    call SoSanh
+    call LayDiaChiMatKhau       
+    lea si, nhapMatKhau
+    call SoSanhChuoi
     pop bx
     cmp al, 1
-    jne SaiTK
+    jne DangNhap_SaiThongTin
 
     ; Dang nhap thanh cong
-    mov currentTK, bl
-    mov daDangNhap, 1
-    lea dx, dnThanhCong
+    mov tkHienTai, bl
+    lea dx, tb_dangNhapOK
     mov ah, 9
     int 21h
     call ChoNhan
     jmp MenuGiaoDich
 
-SaiTK:
-    lea dx, saiThongTin
+DangNhap_SaiThongTin:
+    lea dx, tb_saiThongTin
     mov ah, 9
     int 21h
     call ChoNhan
-    jmp MenuChinh
+    jmp MenuKhoiDau
 
-SaiTK1:
-    lea dx, saiThongTin
-    mov ah, 9
-    int 21h
-    call ChoNhan
-    jmp MenuGiaoDich
-
-ChuaCoTK:
+DangNhap_ChuaCoTK:
     call XoaManHinh
-    lea dx, chuaDK
+    lea dx, tb_chuaDangKy
     mov ah, 9
     int 21h
     call ChoNhan
-    jmp MenuChinh
+    jmp MenuKhoiDau
 
 ; =============================================
 ;  DOI MAT KHAU
 ; =============================================
 DoiMatKhau:
     call XoaManHinh
-    lea di, inputPass
+    lea di, nhapMatKhau
     mov cx, 20
     call LamSachBuffer
-    lea di, newPass
+    lea di, matKhauMoi
     mov cx, 20
     call LamSachBuffer
 
-    lea dx, tbPass
+    ; Nhap password cu
+    lea dx, tb_nhapMatKhau
     mov ah, 9
     int 21h
-    lea si, inputPass
+    lea si, nhapMatKhau
+    mov cx, 19
     call NhapChuoi
 
-    ; So sanh password cu
+    ; So sanh password cu voi password hien tai
     xor bh, bh
-    mov bl, currentTK
-    call LayAddrPassword    ; DI = &tkPassword[currentTK]
-    lea si, inputPass
-    call SoSanh
+    mov bl, tkHienTai
+    call LayDiaChiMatKhau   
+    lea si, nhapMatKhau
+    call SoSanhChuoi
     cmp al, 1
-    jne SaiTK1
+    jne DoiMatKhau_SaiPass
 
-    lea dx, tbNewPass
+    ; Nhap password moi
+    lea dx, tb_nhapPassMoi
     mov ah, 9
     int 21h
-    lea si, newPass
+    lea si, matKhauMoi
+    mov cx, 19
     call NhapChuoi
 
-    ; Copy password moi vao tkPassword[currentTK]
+    ; Kiem tra rong password moi
+    lea si, matKhauMoi
+    cmp byte ptr [si], '$'
+    je  DoiMatKhau_Rong
+
+    ; Copy password moi vao mangMatKhau[tkHienTai]
     xor bh, bh
-    mov bl, currentTK
-    call LayAddrPassword    ; DI = &tkPassword[currentTK]
-    lea si, newPass
+    mov bl, tkHienTai
+    call LayDiaChiMatKhau   
+    lea si, matKhauMoi
     call CopyChuoi
 
-    lea dx, doiOK
+    lea dx, tb_doiPassOK
+    mov ah, 9
+    int 21h
+    call ChoNhan
+    jmp MenuGiaoDich
+
+DoiMatKhau_SaiPass:
+    lea dx, tb_saiPassCu
+    mov ah, 9
+    int 21h
+    call ChoNhan
+    jmp MenuGiaoDich
+
+DoiMatKhau_Rong:
+    lea dx, tb_nhapRong
     mov ah, 9
     int 21h
     call ChoNhan
@@ -755,12 +807,11 @@ DoiMatKhau:
 ;  DANG XUAT
 ; =============================================
 DangXuat:
-    mov daDangNhap, 0
-    lea dx, dxThanhCong
+    lea dx, tb_dangXuatOK
     mov ah, 9
     int 21h
     call ChoNhan
-    jmp MenuChinh
+    jmp MenuKhoiDau
 
 ; =============================================
 ;  KIEM TRA SO DU
@@ -768,39 +819,39 @@ DangXuat:
 KiemTraSoDu:
     call XoaManHinh
 
-    lea dx, r1
+    lea dx, bienLai1
     mov ah, 9
     int 21h
-    lea dx, r2
+    lea dx, bienLai2
     mov ah, 9
     int 21h
-    lea dx, r3
+    lea dx, bienLai3
     mov ah, 9
     int 21h
-    lea dx, r4S
+    lea dx, bienLaiKiemTra
     mov ah, 9
     int 21h
 
     ; In so du
-    lea dx, tbSoDu
+    lea dx, tb_soDuHienTai
     mov ah, 9
     int 21h
     xor bh, bh
-    mov bl, currentTK
+    mov bl, tkHienTai
     shl bx, 1
-    mov ax, tkSoDu[bx]
+    mov ax, mangSoDu[bx]
     call InSo
-    lea dx, tbDonVi
+    lea dx, tb_donVi
     mov ah, 9
     int 21h
 
-    lea dx, r7
+    lea dx, bienLai7
     mov ah, 9
     int 21h
-    lea dx, r8
+    lea dx, bienLai8
     mov ah, 9
     int 21h
-    lea dx, r9
+    lea dx, bienLai9
     mov ah, 9
     int 21h
 
@@ -813,372 +864,426 @@ KiemTraSoDu:
 RutTien:
     call XoaManHinh
 
-    ; Hien so du
-    lea dx, tbSoDu
+    ; Hien so du hien tai
+    lea dx, tb_soDuHienTai
     mov ah, 9
     int 21h
     xor bh, bh
-    mov bl, currentTK
+    mov bl, tkHienTai
     shl bx, 1
-    mov ax, tkSoDu[bx]
+    mov ax, mangSoDu[bx]
     call InSo
-    lea dx, tbDonVi
+    lea dx, tb_donVi
     mov ah, 9
     int 21h
 
-    ; Nhap so tien
-    lea dx, tbNhapSo
+    ; Nhap so tien rut
+    lea dx, tb_nhapSoTien
     mov ah, 9
     int 21h
-    lea di, inputSo
+    lea di, nhapSoTien
     mov cx, 10
     call LamSachBuffer
-    lea si, inputSo
+    lea si, nhapSoTien
+    mov cx, 9
     call NhapChuoi
 
-    lea si, inputSo
+    ; Kiem tra so tien hop le
+    lea si, nhapSoTien
     call ChuoiToSo
-    jc  RT_SoLoi
+    jc  RutTien_SoLoi
     cmp ax, 0
-    je  RT_SoLoi
-    mov bx, ax              ; BX = so tien rut
+    je  RutTien_SoLoi
+    mov bx, ax              
 
-    ; Kiem tra so du: BX = so tien rut
-    push bx                 ; luu so tien rut
+    ; Kiem tra so du co du khong
+    push bx                 
     xor bh, bh
-    mov bl, currentTK
-    shl bx, 1               ; BX = offset vao tkSoDu
-    mov ax, tkSoDu[bx]      ; AX = so du hien tai
-    pop bx                  ; BX = so tien rut
-    cmp ax, bx
-    jb  RT_KhongDu
-
-    ; Tru so du
-    push bx                 ; luu so tien rut
-    xor bh, bh
-    mov bl, currentTK
+    mov bl, tkHienTai
     shl bx, 1
-    pop ax                  ; AX = so tien rut
-    sub tkSoDu[bx], ax
-    mov bx, ax              ; BX = so tien rut (cho bien lai)
+    mov ax, mangSoDu[bx]    
+    pop bx                  
+    cmp ax, bx
+    jb  RutTien_KhongDu
+
+    ; Du tien -> tru so du
+    push bx
+    xor bh, bh
+    mov bl, tkHienTai
+    shl bx, 1
+    pop ax                  
+    sub mangSoDu[bx], ax
+    mov bx, ax              
 
     ; In bien lai
-    lea dx, r1
+    lea dx, bienLai1
     mov ah, 9
     int 21h
-    lea dx, r2
+    lea dx, bienLai2
     mov ah, 9
     int 21h
-    lea dx, r3
+    lea dx, bienLai3
     mov ah, 9
     int 21h
-    lea dx, r4R
+    lea dx, bienLaiRut
     mov ah, 9
     int 21h
 
-    lea dx, r5
+    lea dx, bienLai5
     mov ah, 9
     int 21h
     mov ax, bx
     call InSo
-    lea dx, tbDonVi
+    lea dx, tb_donVi
     mov ah, 9
     int 21h
 
-    call InBienLaiSoDu
+    call InSoDuBienLai
 
-    lea dx, tbRutOK
-    mov ah, 9
-    int 21h
-    call ChoNhan
-    jmp MenuGiaoDich
-
-RT_KhongDu:
-    lea dx, tbKhongDu
+    lea dx, tb_rutOK
     mov ah, 9
     int 21h
     call ChoNhan
     jmp MenuGiaoDich
 
-RT_SoLoi:
-    lea dx, tbSoKhongHop
+RutTien_KhongDu:
+    lea dx, tb_khongDuTien
+    mov ah, 9
+    int 21h
+    call ChoNhan
+    jmp MenuGiaoDich
+
+RutTien_SoLoi:
+    lea dx, tb_soTienSai
     mov ah, 9
     int 21h
     call ChoNhan
     jmp MenuGiaoDich
 
 ; =============================================
-;  GUI TIEN
+;  GUI TIEN 
 ; =============================================
 GuiTien:
     call XoaManHinh
 
-    ; Hien so du
-    lea dx, tbSoDu
+    ; Hien so du hien tai
+    lea dx, tb_soDuHienTai
     mov ah, 9
     int 21h
     xor bh, bh
-    mov bl, currentTK
+    mov bl, tkHienTai
     shl bx, 1
-    mov ax, tkSoDu[bx]
+    mov ax, mangSoDu[bx]
     call InSo
-    lea dx, tbDonVi
+    lea dx, tb_donVi
     mov ah, 9
     int 21h
 
-    ; Nhap so tien
-    lea dx, tbNhapSo
+    ; Hien canh bao gioi han so du
+    lea dx, tb_gioiHan
     mov ah, 9
     int 21h
-    lea di, inputSo
+
+    ; Nhap so tien gui
+    lea dx, tb_nhapSoTien
+    mov ah, 9
+    int 21h
+    lea di, nhapSoTien
     mov cx, 10
     call LamSachBuffer
-    lea si, inputSo
+    lea si, nhapSoTien
+    mov cx, 9
     call NhapChuoi
 
-    lea si, inputSo
+    ; Kiem tra so tien hop le
+    lea si, nhapSoTien
     call ChuoiToSo
-    jc  GT_SoLoi
+    jc  GuiTien_SoLoi
     cmp ax, 0
-    je  GT_SoLoi
-    mov bx, ax              ; BX = so tien gui
+    je  GuiTien_SoLoi
+    mov bx, ax              
 
-    ; Cong vao so du
-    push bx                 ; luu so tien
+    push bx                 
     xor bh, bh
-    mov bl, currentTK
+    mov bl, tkHienTai
+    shl bx, 1               
+    mov ax, mangSoDu[bx]    
+    pop bx                  
+
+    add ax, bx              
+    jc  GuiTien_TranSo      
+
+    ; Khong tran -> cap nhat so du
+    push bx                 
+    xor bh, bh
+    mov bl, tkHienTai
     shl bx, 1
-    pop ax                  ; ax = so tien gui
-    add tkSoDu[bx], ax
-    mov bx, ax              ; tra lai bx = so tien (cho bien lai)
+    mov mangSoDu[bx], ax    
+    pop bx                  
 
     ; In bien lai
-    lea dx, r1
+    lea dx, bienLai1
     mov ah, 9
     int 21h
-    lea dx, r2
+    lea dx, bienLai2
     mov ah, 9
     int 21h
-    lea dx, r3
+    lea dx, bienLai3
     mov ah, 9
     int 21h
-    lea dx, r4G
+    lea dx, bienLaiGui
     mov ah, 9
     int 21h
 
-    lea dx, r5
+    lea dx, bienLai5
     mov ah, 9
     int 21h
     mov ax, bx
     call InSo
-    lea dx, tbDonVi
+    lea dx, tb_donVi
     mov ah, 9
     int 21h
 
-    call InBienLaiSoDu
+    call InSoDuBienLai
 
-    lea dx, tbGuiOK
+    lea dx, tb_guiOK
     mov ah, 9
     int 21h
     call ChoNhan
     jmp MenuGiaoDich
 
-GT_SoLoi:
-    lea dx, tbSoKhongHop
+GuiTien_SoLoi:
+    lea dx, tb_soTienSai
+    mov ah, 9
+    int 21h
+    call ChoNhan
+    jmp MenuGiaoDich
+
+GuiTien_TranSo:
+    lea dx, tb_tranSo
     mov ah, 9
     int 21h
     call ChoNhan
     jmp MenuGiaoDich
 
 ; =============================================
-;  CHUYEN KHOAN
+;  CHUYEN KHOAN 
 ; =============================================
 ChuyenKhoan:
     call XoaManHinh
 
     ; Hien so du hien tai
-    lea dx, tbSoDu
+    lea dx, tb_soDuHienTai
     mov ah, 9
     int 21h
     xor bh, bh
-    mov bl, currentTK
+    mov bl, tkHienTai
     shl bx, 1
-    mov ax, tkSoDu[bx]
+    mov ax, mangSoDu[bx]
     call InSo
-    lea dx, tbDonVi
+    lea dx, tb_donVi
     mov ah, 9
     int 21h
 
-    ; Hien danh sach tai khoan khac de tham khao
-    lea dx, tbDanhSachTK
+    ; Hien danh sach tai khoan co the chuyen den
+    lea dx, tb_danhSachTK
     mov ah, 9
     int 21h
     xor cx, cx
     mov cl, soLuongTK
     xor bx, bx
-CK_InDS:
+CK_InDanhSach:
     cmp bx, cx
-    jge CK_XongDS
-    ; Kiem tra neu la chinh minh thi bo qua khi hien thi
-    mov al, currentTK
+    jge CK_XongDanhSach
+    mov al, tkHienTai
     cmp bl, al
-    je  CK_NextDS
-    lea dx, tbMuiTen
+    je  CK_BoCurent         
+    lea dx, tb_muiTen
     mov ah, 9
     int 21h
     push bx
     push cx
-    call LayAddrUsername    ; SI = &tkUsername[BX]
+    call LayDiaChiTenUser   
     call InChuoi
     pop cx
     pop bx
-CK_NextDS:
+CK_BoCurent:
     inc bx
-    jmp CK_InDS
-CK_XongDS:
+    jmp CK_InDanhSach
+CK_XongDanhSach:
 
     ; Nhap username nguoi nhan
-    lea dx, tbDesToUser
+    lea dx, tb_nhapUserNhan
     mov ah, 9
     int 21h
-    lea di, destUser
+    lea di, tenUserNhan
     mov cx, 20
     call LamSachBuffer
-    lea si, destUser
+    lea si, tenUserNhan
+    mov cx, 19
     call NhapChuoi
 
-    ; Kiem tra nguoi nhan co phai chinh minh khong
-    lea si, destUser
-    ; lay username hien tai
+    ; Kiem tra khong chuyen cho chinh minh
+    lea si, tenUserNhan
     xor bh, bh
-    mov bl, currentTK
-    call LayAddrUsername    ; SI = &tkUsername[currentTK]
-    ; doi: SI=username hien tai, DI=destUser
+    mov bl, tkHienTai
+    call LayDiaChiTenUser   
     mov di, si
-    lea si, destUser
-    call SoSanh
+    lea si, tenUserNhan
+    call SoSanhChuoi
     cmp al, 1
-    je  CK_ChinhMinh
+    je  ChuyenKhoan_ChinhMinh
 
     ; Tim tai khoan nguoi nhan
-    lea si, destUser
+    lea si, tenUserNhan
     call TimTaiKhoan
-    jc  CK_KhongTimThay
+    jc  ChuyenKhoan_KhongTimThay
 
     ; BX = chi so tai khoan nguoi nhan
-    push bx
+    push bx                 
 
-    ; Nhap so tien
-    lea dx, tbNhapSo
+    ; Nhap so tien chuyen
+    lea dx, tb_nhapSoTien
     mov ah, 9
     int 21h
-    lea di, inputSo
+    lea di, nhapSoTien
     mov cx, 10
     call LamSachBuffer
-    lea si, inputSo
+    lea si, nhapSoTien
+    mov cx, 9
     call NhapChuoi
 
-    lea si, inputSo
+    ; Kiem tra so tien hop le
+    lea si, nhapSoTien
     call ChuoiToSo
-    jc  CK_SoLoi_Pop
+    jc  ChuyenKhoan_SoLoi
     cmp ax, 0
-    je  CK_SoLoi_Pop
+    je  ChuyenKhoan_SoLoi
 
-    mov cx, ax              ; CX = so tien chuyen
+    mov cx, ax              
 
-    ; Kiem tra so du nguoi gui
+    ; Kiem tra so du nguoi gui co du khong
     xor bh, bh
-    mov bl, currentTK
+    mov bl, tkHienTai
     shl bx, 1
-    mov ax, tkSoDu[bx]
+    mov ax, mangSoDu[bx]    
     cmp ax, cx
-    jb  CK_KhongDu_Pop
+    jb  ChuyenKhoan_KhongDu
 
-    ; Tru tien nguoi gui (BX da = currentTK*2, CX = so tien)
-    sub tkSoDu[bx], cx
+    mov bx, sp
+    mov bx, ss:[bx]         
 
-    ; Cong tien nguoi nhan
-    pop si                  ; SI = chi so TK nguoi nhan (0-based)
-    shl si, 1               ; SI = offset*2
-    add tkSoDu[si], cx
+    push cx                 
+    shl bx, 1               
+    mov ax, mangSoDu[bx]    
+    pop cx                  
+
+    add ax, cx              
+    jc  ChuyenKhoan_TranSo  
+
+    ; Buoc 1: Cap nhat so du nguoi nhan
+    pop bx                  
+    push bx                 
+    shl bx, 1
+    mov mangSoDu[bx], ax    
+
+    ; Buoc 2: Tru so du nguoi gui
+    xor bh, bh
+    mov bl, tkHienTai
+    shl bx, 1
+    sub mangSoDu[bx], cx    
+
+    ; Pop index nguoi nhan
+    pop si                  
 
     ; In bien lai
-    lea dx, r1
+    lea dx, bienLai1
     mov ah, 9
     int 21h
-    lea dx, r2
+    lea dx, bienLai2
     mov ah, 9
     int 21h
-    lea dx, r3
+    lea dx, bienLai3
     mov ah, 9
     int 21h
-    lea dx, r4C
+    lea dx, bienLaiChuyen
     mov ah, 9
     int 21h
 
     ; In so tien chuyen
-    lea dx, r5
+    lea dx, bienLai5
     mov ah, 9
     int 21h
     mov ax, cx
     call InSo
-    lea dx, tbDonVi
+    lea dx, tb_donVi
     mov ah, 9
     int 21h
 
     ; In ten nguoi nhan
-    lea dx, rTo
+    lea dx, bienLaiChuyenDen
     mov ah, 9
     int 21h
-    lea si, destUser
+    lea si, tenUserNhan
     call InChuoi
-    ; in so du con lai nguoi gui
-    call InBienLaiSoDu
 
-    lea dx, tbCKOK
+    ; In so du con lai cua nguoi gui
+    call InSoDuBienLai
+
+    lea dx, tb_chuyenKhoanOK
     mov ah, 9
     int 21h
     call ChoNhan
     jmp MenuGiaoDich
 
-CK_SoLoi_Pop:
-    pop bx
-    lea dx, tbSoKhongHop
+ChuyenKhoan_SoLoi:
+    pop bx                  
+    lea dx, tb_soTienSai
     mov ah, 9
     int 21h
     call ChoNhan
     jmp MenuGiaoDich
 
-CK_KhongDu_Pop:
-    pop bx
-    lea dx, tbKhongDu
+ChuyenKhoan_KhongDu:
+    pop bx                  
+    lea dx, tb_khongDuTien
     mov ah, 9
     int 21h
     call ChoNhan
     jmp MenuGiaoDich
 
-CK_ChinhMinh:
-    lea dx, tbCKChinhMinh
+ChuyenKhoan_TranSo:
+    pop bx                  
+    lea dx, tb_tranSo
     mov ah, 9
     int 21h
     call ChoNhan
     jmp MenuGiaoDich
 
-CK_KhongTimThay:
-    lea dx, tbKhongTimTK
+ChuyenKhoan_ChinhMinh:
+    lea dx, tb_chuyenChinhMinh
+    mov ah, 9
+    int 21h
+    call ChoNhan
+    jmp MenuGiaoDich
+
+ChuyenKhoan_KhongTimThay:
+    lea dx, tb_khongTimThayTK
     mov ah, 9
     int 21h
     call ChoNhan
     jmp MenuGiaoDich
 
 ; =============================================
-;  THOAT
+;  THOAT CHUONG TRINH
 ; =============================================
 Thoat:
     call XoaManHinh
+    lea dx, tb_tamBiet
+    mov ah, 9
+    int 21h
     mov ah, 4ch
     int 21h
 
 main endp
-
 end main
